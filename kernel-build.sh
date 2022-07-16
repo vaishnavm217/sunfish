@@ -156,8 +156,8 @@ DATE=$(TZ=Asia/Kolkata date +"%Y%m%d-%s")
 	if [ $COMPILER = "gcc" ]
 	then
 		msg "|| Cloning GCC 13.x baremetal ||"
-		git clone --depth=1 https://github.com/mvaisakh/gcc-arm64.git gcc64 -b gcc-new
-		git clone --depth=1 https://github.com/mvaisakh/gcc-arm.git gcc32 -b gcc-new
+		git clone --depth=1 https://github.com/mvaisakh/gcc-arm64.git gcc64 --single-branch
+		git clone --depth=1 https://github.com/mvaisakh/gcc-arm.git gcc32 --single-branch
 		GCC64_DIR=$KERNEL_DIR/gcc64
 		GCC32_DIR=$KERNEL_DIR/gcc32
 	fi
