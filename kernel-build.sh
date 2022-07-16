@@ -71,7 +71,7 @@ DEFCONFIG=sunfish_defconfig
 COMPILER=gcc
 
 # Clean source prior building. 1 is NO(default) | 0 is YES
-INCREMENTAL=0
+INCREMENTAL=1
 
 # Push ZIP to Telegram. 1 is YES | 0 is NO(default)
 PTTG=1
