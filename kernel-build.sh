@@ -89,12 +89,12 @@ FILES=Image.lz4
 
 # Build dtbo.img (select this only if your source has support to building dtbo.img)
 # 1 is YES | 0 is NO(default)
-BUILD_DTBO=0
+BUILD_DTBO=1
 	if [ $BUILD_DTBO = 1 ]
 	then
 		# Set this to your dtbo path.
 		# Defaults in folder out/arch/arm64/boot/dts
-		DTBO_PATH="xiaomi/violet-sm6150-overlay.dtbo"
+		DTBO_PATH="google/sm7150-sunfish-mp1.0-overlay.dtbo"
 	fi
 
 # Silence the compilation
@@ -306,7 +306,7 @@ build_kernel() {
 gen_zip() {
 	msg "|| Zipping into a flashable zip ||"
 	mv "$KERNEL_DIR"/out/arch/arm64/boot/$FILES AnyKernel3/$FILES
-	cat "$KERNEL_DIR"/out/arch/arm64/boot/dts/qcom/*.dtb > AnyKernel3/dtb
+	cat "$KERNEL_DIR"/out/arch/arm64/boot/dts/google/qcom-base/*.dtb > AnyKernel3/dtb
 	if [ $BUILD_DTBO = 1 ]
 	then
 		mv "$KERNEL_DIR"/out/arch/arm64/boot/dtbo.img AnyKernel3/dtbo.img
